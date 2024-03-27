@@ -2,8 +2,8 @@ vCard - Personal Portfolio
 
 # sidebar
 
-alt = Richard hanrick
-Richard hanrick
+alt = Sunil Chandra
+Sunil Chandra
 Web developer
 
 Show Contacts

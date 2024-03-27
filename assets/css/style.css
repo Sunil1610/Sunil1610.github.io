@@ -63,6 +63,7 @@
   --smoky-black: hsl(0, 0%, 7%);
   --white-1: hsl(0, 0%, 100%);
   --white-2: hsl(0, 0%, 98%);
+  --grey: hsl(0, 0%, 30%);
   --orange-yellow-crayola: hsl(45, 100%, 72%);
   --vegas-gold: hsl(45, 54%, 58%);
   --light-gray: hsl(0, 0%, 84%);
@@ -1223,6 +1224,31 @@ textarea.form-input::-webkit-resizer { display: none; }
 
 
 
+.resume-header {
+  display: flex;
+  align-items: center;
+ }
+ 
+.download-btn {
+  margin-left: 10px;
+  top: 15px;
+  right: 15px;
+  border-radius: 8px;
+  width: 32px;
+  height: 32px;
+  color: var(--white-2);
+ }
+
+.template-credits {
+  color: var(--grey);
+  white-space: nowrap;
+  display: inline-block;
+  text-align: right; 
+  padding: 10px;
+  margin: 0; 
+  width: 100%;
+  font-size: 0.6rem;
+}
 
 
 /*-----------------------------------*\
@@ -1872,11 +1898,7 @@ textarea.form-input::-webkit-resizer { display: none; }
   .social-list { justify-content: center; }
 
 
-
-  /**
-	 * RESUME
-	 */
-
   .timeline-text { max-width: 700px; }
+
 
 }

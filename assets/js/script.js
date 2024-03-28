@@ -111,3 +111,21 @@ for (let i = 0; i < downloadBtn.length; i++) {
       document.body.removeChild(link);
   });
 } 
+function updateCreditsClass() {
+  var pageHeight = document.querySelector("[data-full-page]")?.offsetHeight + 120;
+  var windowHeight = window.innerHeight;
+  var credits = document.querySelector(".template-credits");
+  console.log(pageHeight);
+  console.log(windowHeight);
+  if(pageHeight < windowHeight) {
+    if(!credits.classList.contains("credits-small")){
+      credits.classList.add("credits-small");
+    }
+  } else {
+    if(credits.classList.contains("credits-small")){
+      credits.classList.remove("credits-small");
+    }
+  }
+}
+updateCreditsClass();
+window.addEventListener('resize', updateCreditsClass);

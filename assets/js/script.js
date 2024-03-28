@@ -157,3 +157,17 @@ for (let i = 0; i < navigationLinks.length; i++) {
 
   });
 }
+  
+const downloadBtn = document.querySelectorAll("[download-btn]");
+
+for (let i = 0; i < downloadBtn.length; i++) {
+
+  downloadBtn[i].addEventListener("click", function () {
+    const link = document.createElement('a');
+      link.href = '../files/Resume.pdf';
+      link.download = 'Resume.pdf'; 
+      document.body.appendChild(link);
+      link.click();
+      document.body.removeChild(link);
+  });
+}

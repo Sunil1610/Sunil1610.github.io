@@ -571,7 +571,6 @@ main {
   gap: 15px;
   margin: 0 -15px;
   padding: 30px;
-  padding-bottom: 25px;
   overflow-x: auto;
   scroll-behavior: smooth;
   overscroll-behavior-inline: contain;
@@ -590,7 +589,7 @@ main {
 
 .technologies-item img {
   width: 100%;
-  height: 75px;
+  height: 45px;
   transition: var(--transition-1);
 }
 

@@ -130,7 +130,7 @@ a { text-decoration: none; }
 
 li { list-style: none; }
 
-img, ion-icon, a, button, time, span { display: block; }
+img, ion-icon, a, button, .time, span { display: block; }
 
 button {
   font: inherit;
@@ -724,12 +724,12 @@ main {
 
 
 /**
- * #clients 
+ * #technologies 
  */
 
-.clients { margin-bottom: 15px; }
+.technologies { margin-bottom: 15px; }
 
-.clients-list {
+.technologies-list {
   display: flex;
   justify-content: flex-start;
   align-items: flex-start;
@@ -744,18 +744,22 @@ main {
   scroll-padding-inline: 25px;
 }
 
-.clients-item {
-  min-width: 50%;
+.technologies-item {
+  min-width: 75px;
   scroll-snap-align: start;
 }
 
-.clients-item img {
+.technologies-item.invert {
+  filter: invert(1);
+}
+
+.technologies-item img {
   width: 100%;
-  filter: grayscale(1);
+  height: 75px;
   transition: var(--transition-1);
 }
 
-.clients-item img:hover { filter: grayscale(0); }
+.technologies-item img:hover { filter: grayscale(0); }
 
 
 
@@ -1234,9 +1238,21 @@ textarea.form-input::-webkit-resizer { display: none; }
   top: 15px;
   right: 15px;
   border-radius: 8px;
-  width: 32px;
-  height: 32px;
   color: var(--white-2);
+ }
+
+ .tooltip {
+  position: absolute;
+  bottom: 110%;
+  background-color: #333;
+  border-radius: 3px;
+  font-size: 10px;
+  color: #eee;
+  display: none;
+ }
+ 
+ .download-btn:hover > .tooltip {
+  display: block;
  }
 
 .template-credits {
@@ -1272,7 +1288,7 @@ textarea.form-input::-webkit-resizer { display: none; }
    * client
    */
 
-  .clients-item { min-width: calc(33.33% - 10px); }
+  .technologies-item { min-width: calc(33.33% - 10px); }
 
 
 
@@ -1504,16 +1520,16 @@ textarea.form-input::-webkit-resizer { display: none; }
     width: 35px;
   }
 
-  /* clients */
+  /* technologies */
 
-  .clients-list {
+  .technologies-list {
     gap: 50px;
     margin: 0 -30px;
-    padding: 45px;
+    padding: 25px;
     scroll-padding-inline: 45px;
   }
 
-  .clients-item { min-width: calc(33.33% - 35px); }
+  .technologies-item { min-width: calc(33.33% - 35px); }
 
 
 
@@ -1763,13 +1779,9 @@ textarea.form-input::-webkit-resizer { display: none; }
     gap: 20px 25px;
   }
 
-  /* testimonials */
+  /* technologies */
 
-  .testimonials-item { min-width: calc(50% - 15px); }
-
-  /* clients */
-
-  .clients-item { min-width: calc(25% - 38px); }
+  .technologies-item { min-width: calc(10% - 38px); }
 
 
 

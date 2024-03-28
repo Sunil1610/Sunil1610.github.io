@@ -1250,7 +1250,6 @@ textarea.form-input::-webkit-resizer { display: none; }
   font-size: 0.6rem;
   position: absolute;
   right: 0;
-  bottom: 0;
   width: fit-content
 }
 

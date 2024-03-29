@@ -874,6 +874,10 @@ textarea.form-input::-webkit-resizer { display: none; }
   border-radius: 8px;
   color: var(--white-2);
  }
+ 
+ .download-icon {
+   pointer-events: none;
+  }
 
  .tooltip {
   position: absolute;

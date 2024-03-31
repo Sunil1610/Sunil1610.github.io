@@ -1,0 +1,10 @@
+Driver: You wouldn'y buy something from an unkonown person because the biggest problem there is the trust of the individuals
+But you wouldn't be very hesitant to get something from your friend's friend or some one from your office even if you don't know them 
+Also I would believe someone from my friend's company, So I came across this idea of having a trusted network of individuals who can transact among each other
+The Network : 
+People will be added to the network only on an invite basis and we will have a rating for each person in the network, Your rating increases when you transact on the network more and decreases due to a fraudulent activity from you or someone that has been invited to the network by you
+
+Fail cases :
+Handling a bad actor : 
+Rating decrease for the bad actor and the person(s) inviting him with weight of the rating change decreasing as you go up the tree
+Multiple 

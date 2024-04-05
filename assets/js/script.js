@@ -18,7 +18,6 @@ sidebarBtn.addEventListener("click", function () { elementToggleFunc(sidebar); }
 // page navigation variables
 const navigationLinks = document.querySelectorAll("[data-nav-link]");
 const pages = document.querySelectorAll("[data-page]");
-console.log(pages, navigationLinks);
 // add event to all nav link
 for (let i = 0; i < navigationLinks.length; i++) {
   navigationLinks[i].addEventListener("click", function () {
@@ -38,7 +37,6 @@ for (let i = 0; i < navigationLinks.length; i++) {
 }
   
 const downloadBtn = document.querySelectorAll("[download-btn]");
-console.log(downloadBtn);
 for (let i = 0; i < downloadBtn.length; i++) {
 
   downloadBtn[i].addEventListener("click", function () {
@@ -55,8 +53,6 @@ function updateCreditsClass() {
   var pageHeight = document.querySelector("[data-full-page]")?.offsetHeight + 120;
   var windowHeight = window.innerHeight;
   var credits = document.querySelector(".template-credits");
-  console.log(pageHeight);
-  console.log(windowHeight);
   if(pageHeight < windowHeight) {
     if(!credits.classList.contains("credits-small")){
       credits.classList.add("credits-small");

@@ -1,0 +1,39 @@
+<svg width="50" height="50" viewBox="0 0 50 50" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="financialGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#ff6b35;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#f7931e;stop-opacity:1" />
+    </linearGradient>
+  </defs>
+  
+  <!-- Main trunk -->
+  <rect x="23" y="35" width="4" height="15" fill="url(#financialGradient)" rx="2"/>
+  
+  <!-- Top level nodes -->
+  <circle cx="15" cy="25" r="4" fill="url(#financialGradient)"/>
+  <circle cx="25" cy="20" r="4" fill="url(#financialGradient)"/>
+  <circle cx="35" cy="25" r="4" fill="url(#financialGradient)"/>
+  
+  <!-- Middle level nodes -->
+  <circle cx="10" cy="35" r="3" fill="url(#financialGradient)"/>
+  <circle cx="20" cy="30" r="3" fill="url(#financialGradient)"/>
+  <circle cx="30" cy="30" r="3" fill="url(#financialGradient)"/>
+  <circle cx="40" cy="35" r="3" fill="url(#financialGradient)"/>
+  
+  <!-- Bottom level nodes -->
+  <circle cx="8" cy="42" r="2" fill="url(#financialGradient)"/>
+  <circle cx="15" cy="40" r="2" fill="url(#financialGradient)"/>
+  <circle cx="25" cy="38" r="2" fill="url(#financialGradient)"/>
+  <circle cx="35" cy="40" r="2" fill="url(#financialGradient)"/>
+  <circle cx="42" cy="42" r="2" fill="url(#financialGradient)"/>
+  
+  <!-- Connection lines -->
+  <line x1="25" y1="35" x2="15" y2="29" stroke="url(#financialGradient)" stroke-width="1"/>
+  <line x1="25" y1="35" x2="25" y2="24" stroke="url(#financialGradient)" stroke-width="1"/>
+  <line x1="25" y1="35" x2="35" y2="29" stroke="url(#financialGradient)" stroke-width="1"/>
+  
+  <line x1="15" y1="29" x2="10" y2="35" stroke="url(#financialGradient)" stroke-width="1"/>
+  <line x1="15" y1="29" x2="20" y2="30" stroke="url(#financialGradient)" stroke-width="1"/>
+  <line x1="35" y1="29" x2="30" y2="30" stroke="url(#financialGradient)" stroke-width="1"/>
+  <line x1="35" y1="29" x2="40" y2="35" stroke="url(#financialGradient)" stroke-width="1"/>
+</svg> 

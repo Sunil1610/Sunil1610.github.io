@@ -1,0 +1,31 @@
+<svg width="50" height="50" viewBox="0 0 50 50" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="marketplaceGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#4ecdc4;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#44a08d;stop-opacity:1" />
+    </linearGradient>
+  </defs>
+  
+  <!-- Shield background -->
+  <path d="M25 5 L40 12 L40 25 C40 35 25 45 25 45 C25 45 10 35 10 25 L10 12 Z" fill="url(#marketplaceGradient)" opacity="0.3"/>
+  
+  <!-- Shield main -->
+  <path d="M25 8 L38 14 L38 25 C38 33 25 40 25 40 C25 40 12 33 12 25 L12 14 Z" fill="url(#marketplaceGradient)"/>
+  
+  <!-- Handshake -->
+  <path d="M18 28 L22 32 L26 28 L30 32 L34 28" stroke="white" stroke-width="2" fill="none" stroke-linecap="round"/>
+  
+  <!-- Hands -->
+  <ellipse cx="18" cy="30" rx="3" ry="2" fill="white"/>
+  <ellipse cx="32" cy="30" rx="3" ry="2" fill="white"/>
+  
+  <!-- Trust checkmark -->
+  <path d="M22 20 L26 24 L30 18" stroke="white" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+  
+  <!-- Rating stars -->
+  <circle cx="15" cy="15" r="1" fill="white"/>
+  <circle cx="18" cy="15" r="1" fill="white"/>
+  <circle cx="21" cy="15" r="1" fill="white"/>
+  <circle cx="24" cy="15" r="1" fill="white"/>
+  <circle cx="27" cy="15" r="1" fill="white"/>
+</svg> 

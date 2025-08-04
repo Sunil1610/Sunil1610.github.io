@@ -1,0 +1,43 @@
+<svg width="50" height="50" viewBox="0 0 50 50" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="sportsGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#9c27b0;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#e91e63;stop-opacity:1" />
+    </linearGradient>
+  </defs>
+  
+  <!-- Trophy base -->
+  <rect x="20" y="35" width="10" height="8" fill="url(#sportsGradient)"/>
+  <rect x="18" y="33" width="14" height="4" fill="url(#sportsGradient)"/>
+  
+  <!-- Trophy cup -->
+  <path d="M15 25 L15 33 L35 33 L35 25 C35 20 30 15 25 15 C20 15 15 20 15 25 Z" fill="url(#sportsGradient)"/>
+  
+  <!-- Trophy handles -->
+  <path d="M15 25 C15 20 20 15 25 15" stroke="url(#sportsGradient)" stroke-width="2" fill="none"/>
+  <path d="M35 25 C35 20 30 15 25 15" stroke="url(#sportsGradient)" stroke-width="2" fill="none"/>
+  
+  <!-- Analytics chart -->
+  <rect x="8" y="8" width="12" height="12" fill="url(#sportsGradient)" opacity="0.8"/>
+  
+  <!-- Chart bars -->
+  <rect x="10" y="16" width="2" height="2" fill="white"/>
+  <rect x="13" y="14" width="2" height="4" fill="white"/>
+  <rect x="16" y="12" width="2" height="6" fill="white"/>
+  
+  <!-- Data points -->
+  <circle cx="12" cy="12" r="1" fill="white"/>
+  <circle cx="15" cy="10" r="1" fill="white"/>
+  <circle cx="18" cy="8" r="1" fill="white"/>
+  
+  <!-- Performance line -->
+  <path d="M12 12 L15 10 L18 8" stroke="white" stroke-width="1" fill="none" stroke-linecap="round"/>
+  
+  <!-- AI brain indicator -->
+  <circle cx="40" cy="15" r="3" fill="url(#sportsGradient)"/>
+  <path d="M38 15 L40 17 L42 13" stroke="white" stroke-width="1" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+  
+  <!-- Sports ball -->
+  <circle cx="40" cy="35" r="4" fill="url(#sportsGradient)" opacity="0.7"/>
+  <path d="M40 31 L40 39 M36 35 L44 35" stroke="white" stroke-width="1" opacity="0.8"/>
+</svg> 

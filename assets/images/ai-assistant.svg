@@ -1,0 +1,33 @@
+<svg width="50" height="50" viewBox="0 0 50 50" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="aiGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#45b7d1;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#96c93d;stop-opacity:1" />
+    </linearGradient>
+  </defs>
+  
+  <!-- Brain -->
+  <path d="M25 15 C20 15 18 18 18 22 C18 26 20 30 25 30 C30 30 32 26 32 22 C32 18 30 15 25 15 Z" fill="url(#aiGradient)"/>
+  <path d="M22 20 C24 20 25 21 25 23 C25 25 24 26 22 26 C20 26 19 25 19 23 C19 21 20 20 22 20 Z" fill="white"/>
+  <path d="M28 20 C30 20 31 21 31 23 C31 25 30 26 28 26 C26 26 25 25 25 23 C25 21 26 20 28 20 Z" fill="white"/>
+  
+  <!-- Neural connections -->
+  <path d="M15 25 L20 25" stroke="url(#aiGradient)" stroke-width="1" stroke-dasharray="2,2"/>
+  <path d="M30 25 L35 25" stroke="url(#aiGradient)" stroke-width="1" stroke-dasharray="2,2"/>
+  <path d="M25 15 L25 10" stroke="url(#aiGradient)" stroke-width="1" stroke-dasharray="2,2"/>
+  <path d="M25 30 L25 35" stroke="url(#aiGradient)" stroke-width="1" stroke-dasharray="2,2"/>
+  
+  <!-- Connected devices -->
+  <rect x="8" y="35" width="8" height="6" rx="1" fill="url(#aiGradient)" opacity="0.7"/>
+  <rect x="34" y="35" width="8" height="6" rx="1" fill="url(#aiGradient)" opacity="0.7"/>
+  <rect x="21" y="8" width="8" height="6" rx="1" fill="url(#aiGradient)" opacity="0.7"/>
+  
+  <!-- Data flow lines -->
+  <path d="M12 38 L20 25" stroke="url(#aiGradient)" stroke-width="1" opacity="0.6"/>
+  <path d="M38 38 L30 25" stroke="url(#aiGradient)" stroke-width="1" opacity="0.6"/>
+  <path d="M25 14 L25 25" stroke="url(#aiGradient)" stroke-width="1" opacity="0.6"/>
+  
+  <!-- AI indicator -->
+  <circle cx="25" cy="25" r="2" fill="white"/>
+  <circle cx="25" cy="25" r="1" fill="url(#aiGradient)"/>
+</svg> 

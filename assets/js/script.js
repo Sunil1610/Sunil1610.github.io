@@ -75,6 +75,13 @@ if (ideasToggle && ideasDetails) {
     e.preventDefault();
     ideasDetails.style.display = ideasDetails.style.display === "none" ? "block" : "none";
   });
+  
+  // Close modal when clicking outside
+  ideasDetails.addEventListener("click", function (e) {
+    if (e.target === ideasDetails) {
+      closeIdeas();
+    }
+  });
 }
 
 // Ideas carousel functionality
@@ -82,8 +89,6 @@ let currentCardIndex = 0;
 const totalCards = 4;
 
 function scrollIdeas(direction) {
-  const cards = document.querySelectorAll(".idea-card");
-  
   if (direction === 'left') {
     currentCardIndex = (currentCardIndex - 1 + totalCards) % totalCards;
   } else {

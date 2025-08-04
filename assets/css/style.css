@@ -1481,3 +1481,15 @@ textarea.form-input::-webkit-resizer { display: none; }
 
 
 }
+
+/*-----------------------------------*\
+  #IDEAS CAROUSEL SIMPLE CSS SCROLL
+\*-----------------------------------*/
+
+.ideas-carousel {
+  /* Carousel container styles */
+}
+
+.idea-card {
+  transition: all 0.3s ease;
+}

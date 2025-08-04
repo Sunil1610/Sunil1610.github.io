@@ -941,6 +941,309 @@ textarea.form-input::-webkit-resizer { display: none; }
 \*-----------------------------------*/
 
 /**
+ * responsive for mobile screens (max 480px)
+ */
+
+@media (max-width: 480px) {
+
+  /**
+   * CUSTOM PROPERTY
+   */
+
+  :root {
+    --fs-1: 20px;
+    --fs-2: 16px;
+    --fs-3: 15px;
+    --fs-4: 14px;
+    --fs-6: 13px;
+    --fs-7: 12px;
+    --fs-8: 11px;
+  }
+
+  /**
+   * REUSED STYLE
+   */
+
+  .sidebar, article {
+    width: 100%;
+    margin-inline: 10px;
+    padding: 15px;
+  }
+
+  /**
+   * MAIN
+   */
+
+  main {
+    margin-top: 30px;
+    margin-bottom: 30px;
+  }
+
+  /**
+   * SIDEBAR
+   */
+
+  .sidebar {
+    max-height: 120px;
+    margin-bottom: 20px;
+  }
+
+  .sidebar.active { max-height: 500px; }
+
+  .avatar-box img { width: 60px; }
+
+  .info-content .name { font-size: var(--fs-3); }
+
+  .info-content .title { 
+    font-size: var(--fs-7);
+    padding: 3px 12px;
+  }
+
+  /**
+   * NAVBAR
+   */
+
+  .navbar {
+    padding: 0 10px;
+  }
+
+  .navbar-list {
+    gap: 10px;
+    padding: 0 10px;
+  }
+
+  .navbar-link {
+    --fs-8: 12px;
+    padding: 8px 12px;
+  }
+
+  /**
+   * TECHNOLOGIES
+   */
+
+  .technologies-list {
+    gap: 15px;
+    padding: 15px;
+    margin: 0 -15px;
+  }
+
+  .technologies-item {
+    min-width: 80px;
+    padding: 10px;
+  }
+
+  .technologies-item img {
+    width: 30px;
+    height: 30px;
+  }
+
+  .tech-name {
+    font-size: var(--fs-8);
+    margin-top: 5px;
+  }
+
+  /**
+   * BLOG POSTS
+   */
+
+  .blog-posts-list {
+    gap: 15px;
+  }
+
+  .blog-content {
+    padding: 15px;
+  }
+
+  .blog-item-title {
+    font-size: var(--fs-4);
+    margin-bottom: 8px;
+  }
+
+  .blog-text {
+    font-size: var(--fs-7);
+    line-height: 1.4;
+  }
+
+  /**
+   * IDEAS MODAL MOBILE OPTIMIZATION
+   */
+
+  .ideas-details {
+    padding: 10px !important;
+  }
+
+  .ideas-details > div {
+    width: 95% !important;
+    max-width: none !important;
+    max-height: 85vh !important;
+    padding: 20px !important;
+    margin: 20px auto !important;
+    transform: translate(-50%, -50%) !important;
+    top: 50% !important;
+    left: 50% !important;
+  }
+
+  .ideas-details h3 {
+    font-size: 18px !important;
+    margin-bottom: 20px !important;
+  }
+
+  .ideas-carousel {
+    height: auto !important;
+    min-height: 350px !important;
+    padding: 10px 0 !important;
+  }
+
+  .idea-card {
+    position: relative !important;
+    width: 100% !important;
+    max-width: none !important;
+    transform: none !important;
+    opacity: 1 !important;
+    z-index: 1 !important;
+    margin-bottom: 20px !important;
+    padding: 20px !important;
+    display: none;
+  }
+
+  .idea-card.active {
+    display: block !important;
+  }
+
+  .idea-card h4 {
+    font-size: 16px !important;
+    line-height: 1.3 !important;
+    margin-bottom: 15px !important;
+  }
+
+  .idea-card p {
+    font-size: 13px !important;
+    line-height: 1.5 !important;
+    margin-bottom: 15px !important;
+    color: #fff !important;
+  }
+
+  .idea-card img {
+    width: 35px !important;
+    height: 35px !important;
+    margin-right: 15px !important;
+  }
+
+  .idea-card > div:first-child {
+    margin-bottom: 15px !important;
+  }
+
+  .idea-card span {
+    font-size: 11px !important;
+    padding: 6px 12px !important;
+  }
+
+  .carousel-btn {
+    font-size: 14px !important;
+    padding: 10px 20px !important;
+    margin: 0 5px !important;
+  }
+
+}
+
+/**
+ * responsive for tablet screens (481px to 767px)
+ */
+
+@media (min-width: 481px) and (max-width: 767px) {
+
+  /**
+   * REUSED STYLE
+   */
+
+  .sidebar, article {
+    width: 95%;
+    margin-inline: auto;
+    padding: 20px;
+  }
+
+  /**
+   * SIDEBAR
+   */
+
+  .sidebar {
+    max-height: 140px;
+    margin-bottom: 25px;
+  }
+
+  .sidebar.active { max-height: 550px; }
+
+  .avatar-box img { width: 80px; }
+
+  /**
+   * NAVBAR
+   */
+
+  .navbar-list {
+    gap: 15px;
+    padding: 0 15px;
+  }
+
+  .navbar-link {
+    --fs-8: 13px;
+    padding: 10px 15px;
+  }
+
+  /**
+   * TECHNOLOGIES
+   */
+
+  .technologies-list {
+    gap: 25px;
+    padding: 20px;
+  }
+
+  .technologies-item {
+    min-width: 100px;
+    padding: 15px;
+  }
+
+  .technologies-item img {
+    width: 40px;
+    height: 40px;
+  }
+
+  /**
+   * IDEAS MODAL TABLET OPTIMIZATION
+   */
+
+  .ideas-details > div {
+    width: 90% !important;
+    max-height: 80vh !important;
+    padding: 25px !important;
+  }
+
+  .ideas-carousel {
+    height: 450px !important;
+  }
+
+  .idea-card {
+    max-width: 350px !important;
+    padding: 25px !important;
+  }
+
+  .idea-card h4 {
+    font-size: 17px !important;
+  }
+
+  .idea-card p {
+    font-size: 14px !important;
+    line-height: 1.4 !important;
+  }
+
+  .idea-card img {
+    width: 40px !important;
+    height: 40px !important;
+  }
+
+}
+
+/**
  * responsive larger than 450px screen
  */
 

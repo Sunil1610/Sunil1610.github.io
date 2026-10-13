@@ -1,587 +1,583 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Sunil Chandra</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Sunil Chandra — Co-founder &amp; VP of Engineering</title>
+<meta name="description" content="Sunil Chandra — Co-founder &amp; VP of Engineering at Kris@Work, building the AI-native go-to-market execution platform for enterprise revenue teams. Software engineer, IIT Madras alum, based in Bangalore.">
+<link rel="icon" href="./assets/images/SC.png" type="image/png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#07090f;
+  --bg2:#0b0e16;
+  --surface:#0e1320;
+  --surface2:#131a2b;
+  --line:rgba(255,255,255,.08);
+  --text:#eceef4;
+  --muted:#9aa3b5;
+  --faint:#6b7488;
+  --accent:#ffb224;
+  --accent-soft:rgba(255,178,36,.12);
+  --violet:#8b7cf6;
+  --radius:18px;
+  --font-d:'Space Grotesk',system-ui,sans-serif;
+  --font-b:'Inter',system-ui,sans-serif;
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{
+  background:var(--bg);
+  color:var(--text);
+  font-family:var(--font-b);
+  font-weight:300;
+  line-height:1.7;
+  overflow-x:hidden;
+  -webkit-font-smoothing:antialiased;
+}
+::selection{background:var(--accent);color:#111}
+a{color:inherit;text-decoration:none}
+img{max-width:100%;display:block}
 
-  <!--
-    - favicon
-  -->
-  <link rel="shortcut icon" href="./assets/images/SC.png" type="image/x-icon">
+/* ---------- backdrop ---------- */
+.orb{position:fixed;border-radius:50%;filter:blur(110px);opacity:.35;pointer-events:none;z-index:0}
+.orb.a{width:520px;height:520px;background:radial-gradient(circle,#ffb22455,transparent 70%);top:-160px;left:-120px;animation:drift 18s ease-in-out infinite alternate}
+.orb.b{width:620px;height:620px;background:radial-gradient(circle,#8b7cf633,transparent 70%);bottom:-220px;right:-160px;animation:drift 22s ease-in-out infinite alternate-reverse}
+@keyframes drift{from{transform:translate(0,0) scale(1)}to{transform:translate(60px,40px) scale(1.12)}}
+.grid-bg{position:fixed;inset:0;z-index:0;pointer-events:none;opacity:.5;
+  background-image:linear-gradient(rgba(255,255,255,.025) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.025) 1px,transparent 1px);
+  background-size:56px 56px;
+  mask-image:radial-gradient(ellipse 90% 70% at 50% 0%,#000 30%,transparent 75%);
+  -webkit-mask-image:radial-gradient(ellipse 90% 70% at 50% 0%,#000 30%,transparent 75%);
+}
 
-  <!--
-    - custom css link
-  -->
-  <link rel="stylesheet" href="./assets/css/style.css">
+/* ---------- nav ---------- */
+nav{position:fixed;top:0;left:0;right:0;z-index:50;transition:background .3s,border-color .3s,backdrop-filter .3s;border-bottom:1px solid transparent}
+nav.scrolled{background:rgba(7,9,15,.78);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);border-bottom-color:var(--line)}
+.nav-inner{max-width:1160px;margin:0 auto;padding:18px 28px;display:flex;align-items:center;justify-content:space-between}
+.logo{font-family:var(--font-d);font-weight:700;font-size:1.25rem;letter-spacing:.02em}
+.logo span{color:var(--accent)}
+.nav-links{display:flex;gap:34px;list-style:none}
+.nav-links a{font-size:.86rem;font-weight:500;letter-spacing:.08em;text-transform:uppercase;color:var(--muted);position:relative;transition:color .25s}
+.nav-links a::after{content:'';position:absolute;left:0;bottom:-6px;width:0;height:2px;background:var(--accent);transition:width .25s}
+.nav-links a:hover,.nav-links a.active{color:var(--text)}
+.nav-links a:hover::after,.nav-links a.active::after,.nav-links a.active::after{width:100%}
+.burger{display:none;background:none;border:0;cursor:pointer;flex-direction:column;gap:6px;padding:6px}
+.burger span{display:block;width:24px;height:2px;background:var(--text);transition:.3s}
 
-  <!--
-    - google font link
-  -->
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+/* ---------- hero ---------- */
+#hero{position:relative;min-height:100svh;display:flex;align-items:center;z-index:1}
+#net{position:absolute;inset:0;width:100%;height:100%;z-index:0;opacity:.9}
+#hero::after{content:'';position:absolute;inset:0;z-index:1;pointer-events:none;
+  background:radial-gradient(ellipse 80% 60% at 50% 45%,transparent 40%,var(--bg) 100%)}
+.hero-inner{position:relative;z-index:2;max-width:1160px;margin:0 auto;padding:140px 28px 80px;width:100%}
+.eyebrow{display:inline-flex;align-items:center;gap:10px;font-size:.8rem;letter-spacing:.22em;text-transform:uppercase;color:var(--accent);font-weight:500;margin-bottom:26px}
+.eyebrow::before{content:'';width:34px;height:1px;background:var(--accent)}
+.hero-inner h1{font-family:var(--font-d);font-size:clamp(3rem,8.5vw,6.2rem);font-weight:700;line-height:1.02;letter-spacing:-.02em;margin-bottom:18px}
+.hero-inner h1 .grad{background:linear-gradient(100deg,var(--accent) 10%,#ffd97a 45%,var(--violet) 90%);-webkit-background-clip:text;background-clip:text;color:transparent}
+.role{font-family:var(--font-d);font-size:clamp(1.15rem,2.6vw,1.7rem);font-weight:500;color:var(--text);margin-bottom:14px}
+.role .at{color:var(--faint);font-weight:400}
+.tagline{max-width:560px;color:var(--muted);font-size:1.08rem;margin-bottom:40px}
+.cta-row{display:flex;gap:16px;flex-wrap:wrap}
+.btn{display:inline-flex;align-items:center;gap:10px;padding:15px 30px;border-radius:999px;font-weight:600;font-size:.95rem;letter-spacing:.02em;transition:transform .25s,box-shadow .25s,background .25s,color .25s;cursor:pointer;border:1px solid transparent}
+.btn-primary{background:var(--accent);color:#14100a}
+.btn-primary:hover{transform:translateY(-3px);box-shadow:0 14px 34px rgba(255,178,36,.32)}
+.btn-ghost{border-color:var(--line);color:var(--text);background:rgba(255,255,255,.03)}
+.btn-ghost:hover{transform:translateY(-3px);border-color:var(--accent);color:var(--accent)}
+.hero-stats{display:flex;gap:48px;margin-top:72px;flex-wrap:wrap}
+.stat .num{font-family:var(--font-d);font-size:2rem;font-weight:700;color:var(--text)}
+.stat .num em{font-style:normal;color:var(--accent)}
+.stat .lbl{font-size:.82rem;letter-spacing:.14em;text-transform:uppercase;color:var(--faint);margin-top:4px}
+.scroll-cue{position:absolute;left:50%;bottom:28px;transform:translateX(-50%);z-index:2;color:var(--faint);font-size:.72rem;letter-spacing:.3em;text-transform:uppercase;display:flex;flex-direction:column;align-items:center;gap:10px}
+.scroll-cue::after{content:'';width:1px;height:44px;background:linear-gradient(var(--accent),transparent);animation:cue 1.8s ease-in-out infinite}
+@keyframes cue{0%,100%{opacity:.35;transform:translateY(0)}50%{opacity:1;transform:translateY(8px)}}
+
+/* ---------- sections ---------- */
+section{position:relative;z-index:1;padding:110px 0}
+.wrap{max-width:1160px;margin:0 auto;padding:0 28px}
+.sec-head{margin-bottom:60px}
+.sec-tag{font-size:.78rem;letter-spacing:.24em;text-transform:uppercase;color:var(--accent);font-weight:600;margin-bottom:14px;display:block}
+.sec-title{font-family:var(--font-d);font-size:clamp(1.9rem,4.4vw,2.9rem);font-weight:700;letter-spacing:-.01em;line-height:1.15}
+.sec-sub{color:var(--muted);max-width:620px;margin-top:12px}
+
+/* reveal */
+.reveal{opacity:0;transform:translateY(28px);transition:opacity .7s ease,transform .7s cubic-bezier(.2,.7,.3,1)}
+.reveal.visible{opacity:1;transform:none}
+.reveal.d1{transition-delay:.08s}.reveal.d2{transition-delay:.16s}.reveal.d3{transition-delay:.24s}
+
+/* ---------- about ---------- */
+.about-grid{display:grid;grid-template-columns:380px 1fr;gap:64px;align-items:center}
+.photo-frame{position:relative}
+.photo-frame img{border-radius:var(--radius);aspect-ratio:4/5;object-fit:cover;width:100%;filter:saturate(.92)}
+.photo-frame::before{content:'';position:absolute;inset:-14px auto auto -14px;width:100%;height:100%;border:1px solid var(--accent);border-radius:var(--radius);opacity:.5;z-index:-1;transition:.35s}
+.photo-frame:hover::before{inset:-8px auto auto -8px;opacity:.9}
+.photo-badge{position:absolute;bottom:22px;left:22px;background:rgba(7,9,15,.82);backdrop-filter:blur(8px);border:1px solid var(--line);border-radius:14px;padding:12px 18px;font-size:.85rem}
+.photo-badge b{font-family:var(--font-d);color:var(--accent)}
+.about-copy p{color:var(--muted);margin-bottom:18px;font-size:1.04rem}
+.about-copy p b{color:var(--text);font-weight:500}
+.facts{display:grid;grid-template-columns:repeat(2,1fr);gap:14px 28px;margin:30px 0 36px}
+.fact{display:flex;gap:12px;align-items:flex-start;font-size:.94rem}
+.fact .k{color:var(--faint);min-width:74px;letter-spacing:.06em;text-transform:uppercase;font-size:.74rem;padding-top:4px}
+.fact .v{color:var(--text);font-weight:400}
+.fact .v a{border-bottom:1px dotted var(--accent);transition:.25s}
+.fact .v a:hover{color:var(--accent)}
+
+/* ---------- experience ---------- */
+.timeline{position:relative;max-width:760px}
+.timeline::before{content:'';position:absolute;left:8px;top:8px;bottom:8px;width:2px;background:linear-gradient(var(--accent),var(--violet),transparent)}
+.t-item{position:relative;padding:0 0 46px 52px}
+.t-item:last-child{padding-bottom:0}
+.t-item::before{content:'';position:absolute;left:0;top:6px;width:18px;height:18px;border-radius:50%;background:var(--bg);border:2px solid var(--accent);box-shadow:0 0 0 6px var(--accent-soft)}
+.t-when{font-size:.78rem;letter-spacing:.18em;text-transform:uppercase;color:var(--accent);font-weight:600;margin-bottom:8px}
+.t-role{font-family:var(--font-d);font-size:1.45rem;font-weight:600;margin-bottom:2px}
+.t-org{color:var(--muted);font-size:1rem;margin-bottom:12px}
+.t-org i{font-style:normal;color:var(--faint)}
+.t-desc{color:var(--muted);max-width:600px}
+.edu{margin-top:56px;background:var(--surface);border:1px solid var(--line);border-radius:var(--radius);padding:30px 34px;display:flex;gap:22px;align-items:center;max-width:760px;transition:border-color .3s,transform .3s}
+.edu:hover{border-color:rgba(255,178,36,.4);transform:translateY(-3px)}
+.edu .ic{flex:0 0 54px;height:54px;border-radius:14px;background:var(--accent-soft);display:flex;align-items:center;justify-content:center;font-size:1.5rem}
+.edu h3{font-family:var(--font-d);font-size:1.15rem;margin-bottom:2px}
+.edu p{color:var(--muted);font-size:.94rem}
+
+/* ---------- stack ---------- */
+.stack-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(150px,1fr));gap:14px}
+.tech{background:var(--surface);border:1px solid var(--line);border-radius:14px;padding:20px 14px;text-align:center;font-family:var(--font-d);font-weight:500;font-size:.98rem;transition:transform .25s,border-color .25s,box-shadow .25s;cursor:default;position:relative;overflow:hidden}
+.tech::before{content:'';position:absolute;inset:0;background:radial-gradient(circle at 50% 0%,rgba(255,178,36,.14),transparent 70%);opacity:0;transition:opacity .3s}
+.tech:hover{transform:translateY(-6px);border-color:rgba(255,178,36,.5);box-shadow:0 12px 28px rgba(0,0,0,.4)}
+.tech:hover::before{opacity:1}
+.tech small{display:block;font-family:var(--font-b);font-weight:300;color:var(--faint);font-size:.72rem;letter-spacing:.1em;text-transform:uppercase;margin-top:6px}
+
+/* ---------- ideas ---------- */
+.ideas-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:20px}
+.idea{background:var(--surface);border:1px solid var(--line);border-radius:var(--radius);padding:34px 32px;cursor:pointer;transition:transform .3s,border-color .3s,box-shadow .3s;position:relative;overflow:hidden}
+.idea::after{content:'';position:absolute;top:0;left:0;right:0;height:3px;background:linear-gradient(90deg,var(--accent),var(--violet));transform:scaleX(0);transform-origin:left;transition:transform .4s}
+.idea:hover{transform:translateY(-6px);border-color:rgba(255,178,36,.35);box-shadow:0 18px 44px rgba(0,0,0,.45)}
+.idea:hover::after,.idea.open::after{transform:scaleX(1)}
+.idea.open{border-color:rgba(255,178,36,.45)}
+.idea-tag{display:inline-block;font-size:.72rem;letter-spacing:.16em;text-transform:uppercase;font-weight:600;color:var(--accent);background:var(--accent-soft);border-radius:999px;padding:6px 14px;margin-bottom:18px}
+.idea h3{font-family:var(--font-d);font-size:1.4rem;font-weight:600;margin-bottom:10px;line-height:1.3}
+.idea .teaser{color:var(--muted);font-size:.96rem}
+.idea .detail{max-height:0;overflow:hidden;transition:max-height .5s ease;color:var(--muted);font-size:.95rem}
+.idea .detail p{padding-top:16px}
+.idea .detail b{color:var(--text);font-weight:500}
+.idea .more{display:inline-flex;align-items:center;gap:8px;margin-top:18px;font-size:.85rem;font-weight:600;letter-spacing:.08em;text-transform:uppercase;color:var(--faint);transition:color .25s}
+.idea:hover .more{color:var(--accent)}
+.idea .more .arrow{transition:transform .35s;display:inline-block}
+.idea.open .more .arrow{transform:rotate(45deg)}
+.idea.open .more{color:var(--accent)}
+
+/* ---------- notes ---------- */
+.note{background:var(--surface);border:1px solid var(--line);border-radius:var(--radius);padding:48px 52px;max-width:860px;transition:border-color .3s}
+.note:hover{border-color:rgba(139,124,246,.4)}
+.note .n-tag{font-size:.74rem;letter-spacing:.2em;text-transform:uppercase;color:var(--violet);font-weight:600;margin-bottom:16px;display:block}
+.note h3{font-family:var(--font-d);font-size:1.7rem;font-weight:600;margin-bottom:20px;line-height:1.3}
+.note p{color:var(--muted);margin-bottom:16px}
+.note p b,.note p strong{color:var(--text);font-weight:500}
+.note .n-foot{margin-top:26px;padding-top:22px;border-top:1px solid var(--line);font-size:.88rem;color:var(--faint)}
+.note .n-foot a{color:var(--accent);font-weight:500}
+
+/* ---------- contact ---------- */
+#contact .wrap{text-align:center}
+.contact-card{background:linear-gradient(160deg,var(--surface2),var(--surface));border:1px solid var(--line);border-radius:26px;padding:80px 40px;position:relative;overflow:hidden}
+.contact-card::before{content:'';position:absolute;width:420px;height:420px;border-radius:50%;background:radial-gradient(circle,rgba(255,178,36,.14),transparent 70%);top:-160px;left:50%;transform:translateX(-50%);pointer-events:none}
+.contact-card h2{font-family:var(--font-d);font-size:clamp(2rem,5vw,3.2rem);font-weight:700;margin-bottom:16px;position:relative}
+.contact-card h2 span{color:var(--accent)}
+.contact-card>p{color:var(--muted);max-width:520px;margin:0 auto 38px;position:relative}
+.contact-links{display:flex;gap:14px;justify-content:center;flex-wrap:wrap;position:relative}
+.clink{display:inline-flex;align-items:center;gap:10px;padding:13px 24px;border:1px solid var(--line);border-radius:999px;font-size:.92rem;font-weight:500;transition:.28s;background:rgba(255,255,255,.02)}
+.clink:hover{border-color:var(--accent);color:var(--accent);transform:translateY(-3px)}
+
+footer{border-top:1px solid var(--line);padding:34px 0;position:relative;z-index:1}
+.foot-inner{max-width:1160px;margin:0 auto;padding:0 28px;display:flex;justify-content:space-between;align-items:center;gap:16px;flex-wrap:wrap;color:var(--faint);font-size:.86rem}
+.foot-inner .top{color:var(--muted);font-weight:500;letter-spacing:.06em}
+.foot-inner .top:hover{color:var(--accent)}
+
+/* ---------- responsive ---------- */
+@media(max-width:940px){
+  .about-grid{grid-template-columns:1fr;gap:44px}
+  .photo-frame{max-width:340px}
+  .ideas-grid{grid-template-columns:1fr}
+}
+@media(max-width:760px){
+  .nav-links{position:fixed;top:0;right:-100%;width:min(320px,80vw);height:100svh;background:#0b0e16;border-left:1px solid var(--line);flex-direction:column;justify-content:center;align-items:center;gap:30px;transition:right .35s ease;z-index:60}
+  .nav-links.open{right:0}
+  .burger{display:flex;z-index:61}
+  .burger.open span:nth-child(1){transform:translateY(8px) rotate(45deg)}
+  .burger.open span:nth-child(2){opacity:0}
+  .burger.open span:nth-child(3){transform:translateY(-8px) rotate(-45deg)}
+  section{padding:80px 0}
+  .note{padding:32px 26px}
+  .contact-card{padding:56px 24px}
+  .facts{grid-template-columns:1fr}
+  .hero-stats{gap:28px}
+}
+@media(prefers-reduced-motion:reduce){
+  *,*::before,*::after{animation:none!important;transition:none!important}
+  .reveal{opacity:1;transform:none}
+}
+</style>
 </head>
-
 <body>
 
-  <!--
-    - #MAIN
-  -->
-
-  <main data-full-page>
-
-    <!--
-      - #SIDEBAR
-    -->
-
-    <aside class="sidebar" data-sidebar>
-
-      <div class="sidebar-info">
-
-        <figure class="avatar-box">
-          <img src="./assets/images/me.jpg" alt="Sunil Chandra" width="80">
-        </figure>
-
-        <div class="info-content">
-          <h1 class="name" title="Sunil Chandra">Sunil Chandra</h1>
-
-          <p class="title">Software Engineer</p>
-        </div>
-
-        <button class="info_more-btn" data-sidebar-btn>
-          <span>Contact Details</span>
-
-          <ion-icon name="chevron-down"></ion-icon>
-        </button>
-
-      </div>
-
-      <div class="sidebar-info_more">
-
-        <div class="separator"></div>
-
-        <ul class="contacts-list">
-
-          <li class="contact-item">
-
-            <div class="icon-box">
-              <ion-icon name="mail-outline"></ion-icon>
-            </div>
-
-            <div class="contact-info">
-              <p class="contact-title">Email</p>
-
-              <a href="mailto:sunilchandra1610@gmail.com" class="contact-link">sunilchandra1610@gmail.com</a>
-            </div>
-
-          </li>
-
-          <li class="contact-item">
-
-            <div class="icon-box">
-              <ion-icon name="phone-portrait-outline"></ion-icon>
-            </div>
-
-            <div class="contact-info">
-              <p class="contact-title">Phone</p>
-
-              <a href="tel:+919652175912" class="contact-link">+91 9652175912</a>
-            </div>
-
-          </li>
-
-          <li class="contact-item">
-
-            <div class="icon-box">
-              <ion-icon name="location-outline"></ion-icon>
-            </div>
-
-            <div class="contact-info">
-              <p class="contact-title">Location</p>
-
-              <address>Dubai, UAE</address>
-            </div>
-
-          </li>
-
-        </ul>
-
-        <div class="separator"></div>
-
-        <ul class="social-list">
-
-          <li class="social-item">
-            <a href="https://github.com/Sunil1610" target="_blank" class="social-link">
-              <ion-icon name="logo-github"></ion-icon>
-            </a>
-          </li>
-
-          <li class="social-item">
-            <a href="https://www.linkedin.com/in/sunil-chandra-angara/" target="_blank" class="social-link">
-              <ion-icon name="logo-linkedin"></ion-icon>
-            </a>
-          </li>
-
-          <li class="social-item">
-            <a href="https://twitter.com/_sunil1610" target="_blank" class="social-link">
-              <ion-icon name="logo-twitter"></ion-icon>
-            </a>
-          </li>
-
-        </ul>
-
-      </div>
-
-    </aside>
-
-
-
-
-
-    <!--
-      - #main-content
-    -->
-
-    <div class="main-content">
-
-      <!--
-        - #NAVBAR
-      -->
-
-      <nav class="navbar">
-
-        <ul class="navbar-list">
-
-          <li class="navbar-item">
-            <button class="navbar-link  active" data-nav-link>About</button>
-          </li>
-
-          <li class="navbar-item">
-            <button class="navbar-link" data-nav-link>Blog</button>
-          </li>
-
-        </ul>
-
-      </nav>
-
-
-
-
-
-      <!--
-        - #ABOUT
-      -->
-
-      <article class="about  active" data-page="about">
-
-        <header>
-          <h2 class="h2 article-title">
-              
-            <div class="resume-header"> About me 
-              <!-- <button class="download-btn" title="Download Resume" download-btn=resume>
-                <ion-icon name="download-outline" class="download-icon"></ion-icon>
-              </button> -->
-            </div>
-  
-          </h2>
-        </header>
-
-        <section class="about-text">
-          <p>
-            I'm a Software Engineer with 6 years of experience, currently working as Director of Engineering at UnifyApps.
-            </p>
-          <!-- <p>I enjoy building software tools that help in real world use cases and make people's lives easier.
-          </p> -->
-
-          <!-- <p>
-            My job is to build your website so that it is functional and user-friendly but at the same time attractive.
-            Moreover, I
-            add personal touch to your product and make sure that is eye-catching and easy to use. My aim is to bring
-            across your
-            message and identity in the most creative way. I created web design for many famous brand companies.
-          </p> -->
-        </section>
-
-
-
-        <section class="timeline">
-
-          <div class="title-wrapper">
-            <div class="icon-box">
-              <ion-icon name="laptop-outline"></ion-icon>
-            </div>
-
-            <h3 class="h3">Experience</h3>
-          </div>
-
-          <ol class="timeline-list">
-
-            <li class="timeline-item">
-
-              <h4 class="h4 timeline-item-title">
-                <a href="https://unifyapps.com" target="_blank" style="color: inherit; text-decoration: none;">Director of Engineering - UnifyApps</a>
-              </h4>
-
-              <span>Jun 2024 - Present</span>
-
-              <p class="timeline-text">
-                Helping enterprises adopt AI faster
-              </p>
-              <!-- <p class="timeline-text"> -->
-                
-              <!-- </p> -->
-
-            </li>
-
-            <li class="timeline-item">
-
-              <h4 class="h4 timeline-item-title">
-                <a href="https://www.goldmansachs.com" target="_blank" style="color: inherit; text-decoration: none;">Associate - Goldman Sachs</a>
-              </h4>
-
-              <span>Jun 2019 — Jun 2024</span>
-
-              <p class="timeline-text">
-                Helped develop an application to solve production issues across the firm.
-              </p>
-              <!-- <p class="timeline-text"> -->
-                
-              <!-- </p> -->
-
-            </li>
-
-          </ol>
-
-        </section>
-
-        <section class="timeline">
-
-          <div class="title-wrapper">
-            <div class="icon-box">
-              <ion-icon name="book-outline"></ion-icon>
-            </div>
-
-            <h3 class="h3">Education</h3>
-          </div>
-
-          <ol class="timeline-list">
-
-            <li class="timeline-item">
-
-              <h4 class="h4 timeline-item-title"> 
-                <a href="https://www.iitm.ac.in/" target="_blank" class="h4 timeline-item-title">Indian Institute of Technology, Madras </a>
-              </h4>
-
-              <span>2015 — 2019</span>
-
-              <p class="timeline-text">
-                Bachelors of Technology in Computer Science
-              </p>
-
-            </li>
-
-          </ol>
-
-        </section>
-
-        <section class="technologies">
-
-          <h4 class="h4 technologies-title">Technologies I have worked with</h4>
-
-          <ul class="technologies-list has-scrollbar">
-
-            <li class="technologies-item">
-                <img src="./assets/images/java.svg" title="Java">
-                <span class="tech-name">Java</span>
-            </li>
-
-            <li class="technologies-item">
-                <img src="./assets/images/python.svg" title="Python">
-                <span class="tech-name">Python</span>
-            </li>
-
-            <li class="technologies-item">
-                <img src="./assets/images/kafka.svg" title="Kafka">
-                <span class="tech-name">Kafka</span>
-            </li>
-
-            <li class="technologies-item">
-                <img src="./assets/images/spring.svg" title="Spring">
-                <span class="tech-name">Spring</span>
-            </li>
-
-            <li class="technologies-item">
-                <img src="./assets/images/mongodb.svg" title="Mongo DB">
-                <span class="tech-name">MongoDB</span>
-            </li>
-
-            <li class="technologies-item">
-                <img src="./assets/images/angular.svg" title="Angular">
-                <span class="tech-name">Angular</span>
-            </li>
-
-            <li class="technologies-item">
-                <img src="./assets/images/prometheus.svg" title="Prometheus">
-                <span class="tech-name">Prometheus</span>
-            </li>
-
-            <li class="technologies-item">
-                <img src="./assets/images/grafana.svg" title="Grafana">
-                <span class="tech-name">Grafana</span>
-            </li>
-
-            <li class="technologies-item">
-                <img src="./assets/images/react.svg" title="React">
-                <span class="tech-name">React</span>
-            </li>
-
-            <li class="technologies-item">
-                <img src="./assets/images/kubernetes.svg" title="Kubernetes">
-                <span class="tech-name">Kubernetes</span>
-            </li>
-
-            <li class="technologies-item">
-                <img src="./assets/images/quarkus.svg" title="Quarkus">
-                <span class="tech-name">Quarkus</span>
-            </li>
-
-            <li class="technologies-item">
-                <img src="./assets/images/redis.svg" title="Redis">
-                <span class="tech-name">Redis</span>
-            </li>
-
-            <li class="technologies-item">
-                <img src="./assets/images/docker.svg" title="Docker">
-                <span class="tech-name">Docker</span>
-            </li>
-
-          </ul>
-
-        </section>
-
-
-      </article>
-
-
-
-
-
-      <!--
-        - #RESUME
-      -->
-
-      <article class="resume" data-page="resume">
-
-        <header>
-            <h2 class="h2 article-title">
-              
-          <div class="resume-header"> Resume 
-            <!-- <button class="download-btn" download-btn=resume>
-              <ion-icon name="download-outline"></ion-icon>
-            </button> -->
-          </div>
-
-          </h2>
-        </header>
-
-        <section class="skill">
-
-          <h3 class="h3 skills-title">My skills</h3>
-
-          <ul class="skills-list content-card">
-
-            <li class="skills-item">
-
-              <div class="title-wrapper">
-                <h5 class="h5">Web design</h5>
-                <data value="80">80%</data>
-              </div>
-
-              <div class="skill-progress-bg">
-                <div class="skill-progress-fill" style="width: 80%;"></div>
-              </div>
-
-            </li>
-
-            <li class="skills-item">
-
-              <div class="title-wrapper">
-                <h5 class="h5">Graphic design</h5>
-                <data value="70">70%</data>
-              </div>
-
-              <div class="skill-progress-bg">
-                <div class="skill-progress-fill" style="width: 70%;"></div>
-              </div>
-
-            </li>
-
-            <li class="skills-item">
-
-              <div class="title-wrapper">
-                <h5 class="h5">Branding</h5>
-                <data value="90">90%</data>
-              </div>
-
-              <div class="skill-progress-bg">
-                <div class="skill-progress-fill" style="width: 90%;"></div>
-              </div>
-
-            </li>
-
-            <li class="skills-item">
-
-              <div class="title-wrapper">
-                <h5 class="h5">WordPress</h5>
-                <data value="50">50%</data>
-              </div>
-
-              <div class="skill-progress-bg">
-                <div class="skill-progress-fill" style="width: 50%;"></div>
-              </div>
-
-            </li>
-
-          </ul>
-
-        </section>
-
-      </article>
-
-      <!--
-        - #BLOG
-      -->
-
-      <article class="blog" data-page="blog">
-
-        <header>
-          <h2 class="h2 article-title">Blog</h2>
-        </header>
-
-        <section class="blog-posts">
-
-          <ul class="blog-posts-list">
-
-            <li class="blog-post-item">
-              <a href="#" class="ideas-toggle">
-
-                <figure class="blog-banner-box">
-                  <img src="./assets/images/ideas.png" alt="Few Ideas that I have to build" loading="lazy">
-                </figure>
-
-                <div class="blog-content">
-
-                  <h3 class="h3 blog-item-title">Few Ideas that I have to build</h3>
-
-                  <p class="blog-text">
-                    Click to explore my business ideas
-                  </p>
-
-                </div>
-
-              </a>
-
-              <div class="ideas-details" style="display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0, 0, 0, 0.8); z-index: 1000; backdrop-filter: blur(5px);">
-                
-                <div style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); width: 90%; max-width: 1200px; max-height: 80vh; background: #1e1e1e; border-radius: 20px; padding: 30px; overflow: hidden;">
-                  
-                  <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 30px;">
-                    <h3 style="color: #fff; margin: 0; font-size: 24px;">My Business Ideas</h3>
-                    <button onclick="closeIdeas()" style="background: none; border: none; color: #fff; font-size: 24px; cursor: pointer; padding: 5px;">×</button>
-                  </div>
-                  
-                  <div class="ideas-carousel" style="position: relative; width: 100%; height: 400px; display: flex; align-items: center; justify-content: center;">
-                    
-                    <div class="idea-card active" data-index="0" style="position: absolute; width: 90%; max-width: 400px; background: #2a2a2a; border-radius: 15px; padding: 30px; border: 2px solid #ff6b35; box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3); transform: scale(1); transition: all 0.3s ease; z-index: 3;">
-                      <div style="display: flex; align-items: center; margin-bottom: 20px;">
-                        <img src="./assets/images/financial-hierarchy.svg" alt="Financial Hierarchy" style="width: 50px; height: 50px; margin-right: 20px;">
-                        <h4 style="color: #fff; margin: 0; font-size: 18px;">Hierarchical Financial Structure</h4>
-                      </div>
-                      <p style="color: #fff; line-height: 1.6; margin-bottom: 25px; font-size: 14px;">
-                        Add a hierarchical financial structure, which can be used for tracking everything that happens. Example - You take a new budget of the government and you give the complete overview of what percentage of it goes where. The idea is to create a place where people can come in and input specific data of any step of the process and that will be added to the hierarchy and we can see what part of the main piece goes where.
-                      </p>
-                      <span style="background: #ff6b35; color: #fff; padding: 8px 16px; border-radius: 20px; font-size: 12px; font-weight: 500;">Financial Analytics</span>
-                    </div>
-
-                    <div class="idea-card" data-index="1" style="position: absolute; width: 90%; max-width: 400px; background: #2a2a2a; border-radius: 15px; padding: 30px; border: 1px solid #4ecdc4; box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3); transform: scale(0.8) translateX(200px); transition: all 0.3s ease; z-index: 2; opacity: 0.8;">
-                      <div style="display: flex; align-items: center; margin-bottom: 20px;">
-                        <img src="./assets/images/trusted-marketplace.svg" alt="Trusted Marketplace" style="width: 50px; height: 50px; margin-right: 20px;">
-                        <h4 style="color: #fff; margin: 0; font-size: 18px;">Trusted Buy & Sell Network</h4>
-                      </div>
-                      <p style="color: #ccc; line-height: 1.6; margin-bottom: 25px; font-size: 14px;">
-                        An invite-only marketplace with ELO rating system. Users can only invite a fixed number of people, and any scam activity affects both the user and their inviter's rating. Verification through work emails ensures authenticity, solving the trust issues plaguing current marketplaces.
-                      </p>
-                      <span style="background: #4ecdc4; color: #fff; padding: 8px 16px; border-radius: 20px; font-size: 12px; font-weight: 500;">B2C Platform</span>
-                    </div>
-
-                    <div class="idea-card" data-index="2" style="position: absolute; width: 90%; max-width: 400px; background: #2a2a2a; border-radius: 15px; padding: 30px; border: 1px solid #45b7d1; box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3); transform: scale(0.8) translateX(-200px); transition: all 0.3s ease; z-index: 2; opacity: 0.8;">
-                      <div style="display: flex; align-items: center; margin-bottom: 20px;">
-                        <img src="./assets/images/ai-assistant.svg" alt="AI Assistant" style="width: 50px; height: 50px; margin-right: 20px;">
-                        <h4 style="color: #fff; margin: 0; font-size: 18px;">Personalized AI Assistant</h4>
-                      </div>
-                      <p style="color: #ccc; line-height: 1.6; margin-bottom: 25px; font-size: 14px;">
-                        A comprehensive AI assistant managing health, finances, and time. Tracks fitness data, monitors food intake, analyzes financial messages, manages investments, and organizes calendar events. All data stored securely in user's Google/Apple Drive for complete privacy.
-                      </p>
-                      <span style="background: #45b7d1; color: #fff; padding: 8px 16px; border-radius: 20px; font-size: 12px; font-weight: 500;">AI Application</span>
-                    </div>
-
-                    <div class="idea-card" data-index="3" style="position: absolute; width: 90%; max-width: 400px; background: #2a2a2a; border-radius: 15px; padding: 30px; border: 1px solid #9c27b0; box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3); transform: scale(0.6) translateX(400px); transition: all 0.3s ease; z-index: 1; opacity: 0.6;">
-                      <div style="display: flex; align-items: center; margin-bottom: 20px;">
-                        <img src="./assets/images/sports-analytics.svg" alt="Sports Analytics" style="width: 50px; height: 50px; margin-right: 20px;">
-                        <h4 style="color: #fff; margin: 0; font-size: 18px;">Sports Management AI</h4>
-                      </div>
-                      <p style="color: #ccc; line-height: 1.6; margin-bottom: 25px; font-size: 14px;">
-                        A Moneyball-style application with AI integration for sports management. Combines data analytics and artificial intelligence to provide insights for sports teams, players, and management decisions, revolutionizing how sports organizations make strategic choices.
-                      </p>
-                      <span style="background: #9c27b0; color: #fff; padding: 8px 16px; border-radius: 20px; font-size: 12px; font-weight: 500;">Sports Analytics</span>
-                    </div>
-
-                  </div>
-
-                  <div style="display: flex; justify-content: center; margin-top: 20px; gap: 10px;">
-                    <button class="carousel-btn" onclick="scrollIdeas('left')" style="background: rgba(255, 255, 255, 0.1); border: none; color: #fff; padding: 8px 15px; border-radius: 20px; cursor: pointer; font-size: 12px;">← Previous</button>
-                    <button class="carousel-btn" onclick="scrollIdeas('right')" style="background: rgba(255, 255, 255, 0.1); border: none; color: #fff; padding: 8px 15px; border-radius: 20px; cursor: pointer; font-size: 12px;">Next →</button>
-                  </div>
-
-                </div>
-
-              </div>
-            </li>
-
-
-
-          </ul>
-
-        </section>
-
-      </article>
-
+<div class="orb a"></div>
+<div class="orb b"></div>
+<div class="grid-bg"></div>
+
+<nav id="nav">
+  <div class="nav-inner">
+    <a class="logo" href="#hero">sunil<span>.</span>dev</a>
+    <ul class="nav-links" id="navLinks">
+      <li><a href="#about">About</a></li>
+      <li><a href="#experience">Experience</a></li>
+      <li><a href="#stack">Stack</a></li>
+      <li><a href="#ideas">Ideas</a></li>
+      <li><a href="#notes">Notes</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+    <button class="burger" id="burger" aria-label="Menu"><span></span><span></span><span></span></button>
+  </div>
+</nav>
+
+<header id="hero">
+  <canvas id="net"></canvas>
+  <div class="hero-inner">
+    <span class="eyebrow">Bangalore, India</span>
+    <h1>Hi, I'm <span class="grad">Sunil Chandra</span></h1>
+    <p class="role">Co-founder &amp; VP of Engineering <span class="at">@ Kris@Work</span></p>
+    <p class="tagline">Building the AI-native go-to-market platform for enterprise revenue teams. Software engineer at heart — I build tools for real-world problems that make people's lives easier.</p>
+    <div class="cta-row">
+      <a class="btn btn-primary" href="#contact">Get in touch</a>
+      <a class="btn btn-ghost" href="#ideas">Explore my ideas</a>
     </div>
+    <div class="hero-stats">
+      <div class="stat"><div class="num">7<em>+</em></div><div class="lbl">Years engineering</div></div>
+      <div class="stat"><div class="num">3</div><div class="lbl">World-class teams</div></div>
+      <div class="stat"><div class="num">IIT</div><div class="lbl">Madras · CS '19</div></div>
+    </div>
+  </div>
+  <div class="scroll-cue">Scroll</div>
+</header>
 
-  </main>
+<main>
+<!-- ABOUT -->
+<section id="about">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <span class="sec-tag">About</span>
+      <h2 class="sec-title">Engineer, builder, curious mind</h2>
+    </div>
+    <div class="about-grid">
+      <div class="photo-frame reveal">
+        <img src="./assets/images/me.jpg" alt="Sunil Chandra">
+        <div class="photo-badge"><b>Sunil Chandra</b><br>Software Engineer</div>
+      </div>
+      <div class="about-copy reveal d1">
+        <p>I'm a <b>Software Engineer with 7+ years of experience</b>, currently <b>Co-founder &amp; VP of Engineering at Kris@Work</b> — building the AI-native go-to-market execution platform for enterprise revenue teams.</p>
+        <p>I enjoy building software tools that solve real-world use cases and make people's lives easier. Previously, I spent five years at <b>Goldman Sachs</b> building applications that solved production issues across the firm.</p>
+        <p>Off the roadmap, I'm usually sketching out startup ideas, writing notes on trust systems and AI, or thinking about how data can make better decisions — in finance, marketplaces, and sports.</p>
+        <div class="facts">
+          <div class="fact"><span class="k">Email</span><span class="v"><a href="mailto:sunilchandra1610@gmail.com">sunilchandra1610@gmail.com</a></span></div>
+          <div class="fact"><span class="k">Phone</span><span class="v"><a href="tel:+919652175912">+91 96521 75912</a></span></div>
+          <div class="fact"><span class="k">Location</span><span class="v">Bangalore, India</span></div>
+          <div class="fact"><span class="k">GitHub</span><span class="v"><a href="https://github.com/Sunil1610" target="_blank" rel="noopener">github.com/Sunil1610</a></span></div>
+        </div>
+        <!-- Resume button hidden 2026-10-12 per Sunil (old Resume.pdf kept; he will update later). Re-enable by uncommenting:
+        <div class="cta-row">
+          <a class="btn btn-ghost" href="./assets/files/Resume.pdf" target="_blank" rel="noopener">Download résumé</a>
+        </div>
+        -->
+      </div>
+    </div>
+  </div>
+</section>
 
+<!-- EXPERIENCE -->
+<section id="experience" style="background:var(--bg2)">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <span class="sec-tag">Journey</span>
+      <h2 class="sec-title">Where I've worked</h2>
+    </div>
+    <div class="timeline">
+      <div class="t-item reveal">
+        <div class="t-when">Feb 2026 — Present</div>
+        <div class="t-role">Co-founder &amp; VP of Engineering</div>
+        <div class="t-org"><a href="https://www.krisatwork.ai" target="_blank" rel="noopener" style="border-bottom:1px dotted var(--accent)">Kris@Work</a> <i>· Full-time</i></div>
+        <p class="t-desc">Leading platform architecture for the AI-native go-to-market execution platform — enterprise-grade scalability, reliability and performance for revenue teams. $3M seed round backed by Info Edge Ventures.</p>
+      </div>
+      <div class="t-item reveal d1">
+        <div class="t-when">Jun 2024 — Dec 2025</div>
+        <div class="t-role">Director of Engineering</div>
+        <div class="t-org">UnifyApps <i>· Dubai, UAE</i></div>
+        <p class="t-desc">AI platform for enterprise customers — led engineering teams turning cutting-edge models into reliable, production-grade products.</p>
+      </div>
+      <div class="t-item reveal d2">
+        <div class="t-when">Jan 2022 — May 2024</div>
+        <div class="t-role">Associate</div>
+        <div class="t-org">Goldman Sachs <i>· Bengaluru, India</i></div>
+        <p class="t-desc">Built applications solving production issues across the firm — issue management, telemetry pipelines and notification systems where downtime was never an option.</p>
+      </div>
+      <div class="t-item reveal d3">
+        <div class="t-when">Jun 2019 — Jan 2022</div>
+        <div class="t-role">Analyst</div>
+        <div class="t-org">Goldman Sachs <i>· Bengaluru, India</i></div>
+        <p class="t-desc">Engineering foundations — monitoring, database tooling and org-health systems used by teams across the firm.</p>
+      </div>
+    </div>
+    <div class="edu reveal">
+      <div class="ic">🎓</div>
+      <div>
+        <h3>Indian Institute of Technology, Madras</h3>
+        <p>Bachelor of Technology in Computer Science · 2015 — 2019</p>
+      </div>
+    </div>
+  </div>
+</section>
 
-  <a href="https://github.com/codewithsadee" target="_blank" rel="noopener noreferrer" class="template-credits">Template by @codewithsadee</a>
+<!-- STACK -->
+<section id="stack">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <span class="sec-tag">Toolbox</span>
+      <h2 class="sec-title">Technologies I work with</h2>
+      <p class="sec-sub">A snapshot of the languages, frameworks, and platforms I've used to ship production systems.</p>
+    </div>
+    <div class="stack-grid">
+      <div class="tech reveal">Java<small>Language</small></div>
+      <div class="tech reveal d1">Python<small>Language</small></div>
+      <div class="tech reveal d2">Spring<small>Framework</small></div>
+      <div class="tech reveal d3">Quarkus<small>Framework</small></div>
+      <div class="tech reveal">React<small>Frontend</small></div>
+      <div class="tech reveal d1">Angular<small>Frontend</small></div>
+      <div class="tech reveal d2">Kafka<small>Streaming</small></div>
+      <div class="tech reveal d3">MongoDB<small>Database</small></div>
+      <div class="tech reveal">Redis<small>Cache</small></div>
+      <div class="tech reveal d1">Docker<small>Containers</small></div>
+      <div class="tech reveal d2">Kubernetes<small>Orchestration</small></div>
+      <div class="tech reveal d3">Prometheus<small>Observability</small></div>
+      <div class="tech reveal">Grafana<small>Observability</small></div>
+    </div>
+  </div>
+</section>
 
+<!-- IDEAS -->
+<section id="ideas" style="background:var(--bg2)">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <span class="sec-tag">Side quests</span>
+      <h2 class="sec-title">Ideas I'm noodling on</h2>
+      <p class="sec-sub">A few concepts I keep coming back to. Click any card to read more.</p>
+    </div>
+    <div class="ideas-grid">
+      <article class="idea reveal" tabindex="0">
+        <span class="idea-tag">Financial Analytics</span>
+        <h3>Hierarchical Financial Structure</h3>
+        <p class="teaser">See exactly where every rupee, dollar, or dirham flows — at every level of the hierarchy.</p>
+        <div class="detail"><p>Take a government budget and get a <b>complete overview of what percentage goes where</b>. People input data at any step of the process, it rolls up into the hierarchy, and you can visually trace what part of the whole each piece represents. Financial transparency, made explorable.</p></div>
+        <span class="more">Read more <span class="arrow">＋</span></span>
+      </article>
+      <article class="idea reveal d1" tabindex="0">
+        <span class="idea-tag">B2C Platform</span>
+        <h3>Trusted Buy &amp; Sell Network</h3>
+        <p class="teaser">An invite-only marketplace where trust is the currency — working name: Apex Guild.</p>
+        <div class="detail"><p>Users join <b>by invitation only</b> and carry an ELO-style rating. Each person can invite a fixed number of others, and scam activity damages <b>both the user and their inviter's rating</b>. Verification through work emails keeps it authentic — solving the trust problem that plagues open marketplaces.</p></div>
+        <span class="more">Read more <span class="arrow">＋</span></span>
+      </article>
+      <article class="idea reveal d2" tabindex="0">
+        <span class="idea-tag">AI Application</span>
+        <h3>Personalized AI Assistant</h3>
+        <p class="teaser">One assistant for your health, money, and time — with privacy built in, not bolted on.</p>
+        <div class="detail"><p>A comprehensive assistant that <b>tracks fitness, monitors food intake, analyzes financial messages, manages investments, and organizes your calendar</b>. All data stays in <b>your own Google / Apple Drive</b> — complete privacy, zero data harvesting.</p></div>
+        <span class="more">Read more <span class="arrow">＋</span></span>
+      </article>
+      <article class="idea reveal d3" tabindex="0">
+        <span class="idea-tag">Sports Analytics</span>
+        <h3>Sports Management AI</h3>
+        <p class="teaser">Moneyball, supercharged with modern AI.</p>
+        <div class="detail"><p>An application combining <b>data analytics and artificial intelligence</b> to give teams, players, and management sharper insights — revolutionizing how sports organizations make strategic decisions, from scouting to game-day tactics.</p></div>
+        <span class="more">Read more <span class="arrow">＋</span></span>
+      </article>
+    </div>
+  </div>
+</section>
 
-  <!--
-    - custom js link
-  -->
-  <script src="./assets/js/script.js"></script>
+<!-- NOTES -->
+<section id="notes">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <span class="sec-tag">Notes</span>
+      <h2 class="sec-title">From the notebook</h2>
+    </div>
+    <article class="note reveal">
+      <span class="n-tag">Essay · Trust Systems</span>
+      <h3>The Trust Index — why we buy from friends of friends</h3>
+      <p>You wouldn't buy something from a complete stranger — the biggest problem is <b>trust</b>. But you wouldn't hesitate to buy from your friend's friend, or someone from your office, even if you don't know them personally. I'd even trust someone from a friend's company.</p>
+      <p>That observation led to an idea: a <b>trusted network of individuals who transact among each other</b>. People join only by invitation, and everyone carries a rating. Your rating grows as you transact on the network — and <b>shrinks when you, or someone you invited, acts fraudulently</b>.</p>
+      <p>Handling a bad actor means decreasing the rating of the actor <b>and</b> the people who invited them, with the penalty decaying as you move up the invite tree. Trust becomes transitive, measurable, and — most importantly — expensive to lose.</p>
+      <div class="n-foot">Related idea: <a href="#ideas">Trusted Buy &amp; Sell Network</a> · working name <b>Apex Guild</b></div>
+    </article>
+  </div>
+</section>
 
-  <!--
-    - ionicon link
-  -->
-  <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
-  <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+<!-- CONTACT -->
+<section id="contact">
+  <div class="wrap">
+    <div class="contact-card reveal">
+      <span class="sec-tag">Contact</span>
+      <h2>Let's build something <span>great</span></h2>
+      <p>Have an interesting problem, a role, or just want to talk shop about AI, systems, or startups? My inbox is open.</p>
+      <div class="contact-links">
+        <a class="clink" href="mailto:sunilchandra1610@gmail.com">✉️&nbsp; Email me</a>
+        <a class="clink" href="tel:+919652175912">📞&nbsp; +91 96521 75912</a>
+        <a class="clink" href="https://github.com/Sunil1610" target="_blank" rel="noopener">💻&nbsp; GitHub</a>
+      </div>
+    </div>
+  </div>
+</section>
+</main>
 
-  
+<footer>
+  <div class="foot-inner">
+    <span>© <span id="yr"></span> Sunil Chandra · Bangalore, India</span>
+    <a class="top" href="#hero">Back to top ↑</a>
+  </div>
+</footer>
+
+<script>
+(function(){
+  "use strict";
+
+  /* ---------- nav ---------- */
+  var nav = document.getElementById('nav');
+  var onScroll = function(){ nav.classList.toggle('scrolled', window.scrollY > 40); };
+  window.addEventListener('scroll', onScroll, {passive:true}); onScroll();
+
+  var burger = document.getElementById('burger');
+  var links = document.getElementById('navLinks');
+  burger.addEventListener('click', function(){
+    links.classList.toggle('open');
+    burger.classList.toggle('open');
+  });
+  links.addEventListener('click', function(e){
+    if(e.target.tagName === 'A'){ links.classList.remove('open'); burger.classList.remove('open'); }
+  });
+
+  /* scroll spy */
+  var spy = new IntersectionObserver(function(entries){
+    entries.forEach(function(en){
+      if(en.isIntersecting){
+        var id = en.target.id;
+        links.querySelectorAll('a').forEach(function(a){
+          a.classList.toggle('active', a.getAttribute('href') === '#' + id);
+        });
+      }
+    });
+  }, {rootMargin:'-40% 0px -55% 0px'});
+  document.querySelectorAll('main section[id], header[id]').forEach(function(s){ spy.observe(s); });
+
+  /* ---------- reveal ---------- */
+  var ro = new IntersectionObserver(function(entries){
+    entries.forEach(function(en){
+      if(en.isIntersecting){ en.target.classList.add('visible'); ro.unobserve(en.target); }
+    });
+  }, {threshold:.12});
+  document.querySelectorAll('.reveal').forEach(function(el){ ro.observe(el); });
+
+  /* ---------- ideas accordion ---------- */
+  document.querySelectorAll('.idea').forEach(function(card){
+    var detail = card.querySelector('.detail');
+    var toggle = function(){
+      var open = card.classList.toggle('open');
+      detail.style.maxHeight = open ? detail.scrollHeight + 'px' : '0px';
+      card.querySelector('.more').firstChild.textContent = open ? 'Show less ' : 'Read more ';
+    };
+    card.addEventListener('click', toggle);
+    card.addEventListener('keydown', function(e){
+      if(e.key === 'Enter' || e.key === ' '){ e.preventDefault(); toggle(); }
+    });
+  });
+
+  /* ---------- particle network ---------- */
+  var canvas = document.getElementById('net');
+  var ctx = canvas.getContext('2d');
+  var W, H, pts = [], mouse = {x:-9999, y:-9999};
+  var DPR = Math.min(window.devicePixelRatio || 1, 2);
+
+  function resize(){
+    var r = canvas.parentElement.getBoundingClientRect();
+    W = r.width; H = r.height;
+    canvas.width = W * DPR; canvas.height = H * DPR;
+    canvas.style.width = W + 'px'; canvas.style.height = H + 'px';
+    ctx.setTransform(DPR, 0, 0, DPR, 0, 0);
+    var n = Math.min(110, Math.floor(W * H / 16000));
+    pts = [];
+    for(var i = 0; i < n; i++){
+      pts.push({
+        x: Math.random() * W, y: Math.random() * H,
+        vx: (Math.random() - .5) * .45, vy: (Math.random() - .5) * .45,
+        r: Math.random() * 1.8 + .8
+      });
+    }
+  }
+
+  canvas.parentElement.addEventListener('mousemove', function(e){
+    var r = canvas.getBoundingClientRect();
+    mouse.x = e.clientX - r.left; mouse.y = e.clientY - r.top;
+  });
+  canvas.parentElement.addEventListener('mouseleave', function(){ mouse.x = -9999; mouse.y = -9999; });
+
+  var LINK = 130;
+  function frame(){
+    ctx.clearRect(0, 0, W, H);
+    for(var i = 0; i < pts.length; i++){
+      var p = pts[i];
+      p.x += p.vx; p.y += p.vy;
+      if(p.x < 0 || p.x > W) p.vx *= -1;
+      if(p.y < 0 || p.y > H) p.vy *= -1;
+      /* gentle attraction to cursor */
+      var dxm = mouse.x - p.x, dym = mouse.y - p.y;
+      var dm = Math.sqrt(dxm*dxm + dym*dym);
+      if(dm < 180 && dm > 1){ p.x += dxm/dm * .35; p.y += dym/dm * .35; }
+    }
+    ctx.lineWidth = 1;
+    for(var a = 0; a < pts.length; a++){
+      for(var b = a + 1; b < pts.length; b++){
+        var pa = pts[a], pb = pts[b];
+        var dx = pa.x - pb.x, dy = pa.y - pb.y;
+        var d = Math.sqrt(dx*dx + dy*dy);
+        if(d < LINK){
+          var alpha = (1 - d / LINK) * .28;
+          ctx.strokeStyle = 'rgba(255,178,36,' + alpha.toFixed(3) + ')';
+          ctx.beginPath(); ctx.moveTo(pa.x, pa.y); ctx.lineTo(pb.x, pb.y); ctx.stroke();
+        }
+      }
+    }
+    for(var k = 0; k < pts.length; k++){
+      var q = pts[k];
+      ctx.fillStyle = 'rgba(255,200,90,.75)';
+      ctx.beginPath(); ctx.arc(q.x, q.y, q.r, 0, 6.2832); ctx.fill();
+    }
+    requestAnimationFrame(frame);
+  }
+
+  var reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  resize();
+  window.addEventListener('resize', resize);
+  if(!reduceMotion){
+    var visible = true;
+    document.addEventListener('visibilitychange', function(){ visible = !document.hidden; if(visible) requestAnimationFrame(frame); });
+    requestAnimationFrame(frame);
+  } else {
+    /* static sprinkle for reduced motion */
+    ctx.fillStyle = 'rgba(255,200,90,.5)';
+    pts.forEach(function(p){ ctx.beginPath(); ctx.arc(p.x, p.y, p.r, 0, 6.2832); ctx.fill(); });
+  }
+
+  /* ---------- misc ---------- */
+  document.getElementById('yr').textContent = new Date().getFullYear();
+})();
+</script>
 </body>
-<!-- <footer style="position: fixed; bottom: 0; width: 100%; text-align: right; padding: 10px;">
-  <p style="margin: 0; font-size: 0.8em;">&copy; 2023 Your Company Name. All rights reserved. Template by <a href="https://example.com/template-owner" target="_blank" rel="noopener noreferrer">Template Owner</a>.</p>
-</footer> -->
-
 </html>
